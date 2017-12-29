@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<script type="text/javascript">
+
+
+
+function dayOfweek(){
+//data items
+var day1=new Date(document.getElementById("start").value);
+
+var ofweek=(Date.getDay());
+var i=ofweek; 
+
+var days=[Monday, Tuesday, Wednesday, Thursday, Friday, Saturday];
+
+var weekday=days[i]
+
+document.getElementById('output').innerHTML=days;
+
+}
+	
+
+</script>
+</head>
+<body>
+
+Enter Date<input type="text" id="start" size="5"><br><br>
+
+
+
+<button type="button" onclick="dayOfweek()">Day of the Week</button>
+
+<div id="output"></div>
+
+
+
+</body>
+</html>
+	

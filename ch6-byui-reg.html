@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Process Registration Date</title>
+<script type="text/javascript">
+/* Input: A person's name, number of credits and status
+ * Processing: Determine the price to charge
+ *     that person for a ticket to a game
+ * Output: The ticket price
+ */
+function whatDay(){
+    var name = document.getElementById("nameBox").value;
+    var cred = parseInt(document.getElementById("credBox").value);
+	var status =document.getElementById("statBox").value;
+	var regDate;
+    
+	if (cred < 25) {
+        if (status=="Freshman")
+            regDate = "10-Apr";
+		else if (status=="Sophomore")
+			regDate="20-Apr";
+        else if (status=="Junior")
+            regDate="10-Apr";
+        else if (status=="Senior")
+            regDate="1-Apr";
+    }
+	else if (cred <55 ) {
+        if (status=="Freshman")
+            regDate = "30-Mar";
+		else if (status=="Sophomore")
+			regDate="20-Mar";
+        else if (status=="Junior")
+            regDate="10-Mar";
+        else if (status=="Senior")
+            regDate="1-Mar";
+    }
+    else if (cred <100 ) {
+        if (status=="Freshman")
+            regDate = "28-Feb";
+		else if (status=="Sophomore")
+			regDate="20-Feb";
+        else if (status=="Junior")
+            regDate="10-Feb";
+        else if (status=="Senior")
+            regDate="1-Feb";
+    }
+	else if (cred <121 ) {
+        if (status=="Freshman")
+            regDate = "30-Jan";
+		else if (status=="Sophomore")
+			regDate="20-Jan";
+        else if (status=="Junior")
+            regDate="10-Jan";
+        else if (status=="Senior")
+            regDate="1-Jan";
+    }
+	else regDate="Not Applicable--too many credits--can't register";
+	
+	var total= name+ ", " +"you have" +cred + " credits and as a " + status + " then your registration date is: "+ regDate;
+    
+	document.getElementById('dateDiv').innerHTML = total;
+}
+</script>
+</head>
+
+<body>
+Name:<input type="text" id="nameBox" size="3"><br>  
+Credits:<input type="text" id="credBox" size="3"><br>
+Status:<input type="text" id="statBox" size="3"><br>  
+<button type="button" onclick="whatDay()">Registration Date</button>  
+<div id="dateDiv"></div>  
+</body>
+</html>

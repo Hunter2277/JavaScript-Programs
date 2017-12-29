@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Sales</title>
+
+				
+<script type="text/javascript">
+/*Input: Subtotal
+*Processing:if the day of the week is Tuesday or Wednesday then you will calcualte 10% of the subtotal and then
+subtract subtract 10% from subtotal and then add 6%. Else the output is the same.
+*Output: The Subtotal
+*/
+
+
+function salesDays(){
+ 
+ var sub=parseFloat(document.getElementById("text1").value);
+ var total;
+ var day = new Date().getDay();
+    if ((day == 2|| day==3) && sub>50) {
+		sub-=sub*.10;}
+		
+	total=sub+sub*.06;
+    
+	document.getElementById("due").innerHTML=total;
+}
+
+</script>
+</head>		
+
+<body>
+  
+ Subtotal <input type="text" id="text1">
+ <button type="button" onclick="salesDays()">Calculate</button><br>
+ Amount due<div id="due"></div>
+	
+</body>
+</html>
+

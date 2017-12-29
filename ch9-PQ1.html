@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<script type="text/javascript">
+/* Input: Principle (p) annualRate (aR) numOfYears(nY) periodsPerYear (pPY)
+ * Processing: Function doFV futurevalue= principle *(1+growthrate)'Total periods  
+ * Output:
+ */
+
+ function doFV(){
+ 
+	var principal= parseFloat(document.getElementById("txtP").value);
+	var annualRate= parseFloat(document.getElementById("txtAR").value);
+	var years= parseInt(document.getElementById("txtY").value);
+	var periodsPerYear= parseInt(document.getElementById("txtPPY").value);
+
+	var futureValue=computeFutureValue(principal,annualRate,years,periodsPerYear);
+ document.getElementById("txtFutureValue").value=futureValue;
+ }
+function computeFutureValue(principal, annualRate, years, periodsPerYear)  {
+
+var growthRate=annualRate/periodsPerYear;
+var totalPeriods=years*periodsPerYear;
+var futureValue=principal*Math.pow(1+growthRate, totalPeriods);
+
+return futureValue;	
+
+ }
+ 
+</script>
+</head>
+
+<body>
+<h1> Investment calculator</h1>
+Amount invested (principlal) <input type="text" id="txtP" size="5"><br><br>
+Annual rate (example: .08) <input type="text" id="txtAR" size="5"><br><br>
+Number of Years <input type="text" id="txtY" size="5"><br><br>
+Periods per year<input type="text" id="txtPPY" size="5"><br><br>
+<button type="button" onclick="doFV()">Compute Future Value</button>
+<input type="text" id="txtFutureValue" size="5"><br>
+
+
+</body>
+</html>

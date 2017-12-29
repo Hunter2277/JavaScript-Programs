@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<script type="text/javascript">
+
+/* Input: two input boxes from the user, a button "collect prefix" to run the function
+/  Processing: Create function to identify common prefix between the two inputs
+/  Output:Prefix
+*/
+
+
+
+function preFix(){
+
+var x=document.getElementById("phrase").value;
+var y=document.getElementById("phrase2").value;
+
+document.getElementById('out').innerHTML=findPre(x,y);
+}
+
+function findPre(x,y){
+var a=x.toLowerCase();
+var b=y.toLowerCase();
+
+var output="";
+
+for(var i=0; i<a.length; i++){
+
+	if (a.charAt(i)==b.charAt(i)){
+	output+=a.charAt(i);
+	}
+	else {break;
+	}
+
+	}	 
+
+return output;
+}
+
+
+	
+
+</script>
+</head>
+<body>
+
+First Word<input type="text" id="phrase" size="5"><br><br>
+Second Word<input type="text" id="phrase2" size="5"><br><br>
+
+
+
+<button type="button" onclick="preFix()">Find Prefix</button>
+
+<div id="out"></div>
+
+
+
+</body>
+</html>
+	
